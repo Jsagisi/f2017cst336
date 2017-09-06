@@ -1,0 +1,39 @@
+            h1{
+                color:black !important;
+                text-align: center;
+            }
+            nav a {
+                font-size:1.8em;
+                font: sans-serif;
+                color:green;
+                background-color:orange;
+                padding:15px;
+                padding-bottom:0px;
+                border-radius:20px;
+                border-top-left-radius:20px;
+                border-top-right-radius:20px;
+                
+            }
+            p {
+                font: 15px arial, sans-serif;
+            }
+            h2{
+                text-align: center;
+            }
+            img {
+                opacity: 0.6;
+                filter: alpha(opacity=50); /* For IE8 and earlier */
+                display: block;
+                margin: auto;
+            }    
+            nav a:hover{
+                background-color:red;
+                font-size: 2em;
+                transition: 0.5s;
+            }
+            #wrapper {
+                
+                width: 1000px;
+                margin: 0 auto;  /* this aligns the whole section in the center */
+                
+            }
