@@ -6,10 +6,10 @@
     </head>
     <body>
         <div>
-            <a href="/cst336/homework">Homework</a>
+            <a href="/homework">Homework</a>
         </div>
         <div>
-            <a href="/cst336/lab">Labs</a>
+            <a href="/lab">Labs</a>
         </div>
     </body>
 </html>
