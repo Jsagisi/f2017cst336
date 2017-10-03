@@ -1,0 +1,28 @@
+            td {
+                width:10px;
+                height:10px;
+                border-radius:20px;
+                padding:3px;
+               
+          
+            }
+            th{
+                color:black;
+            }
+            h1{
+                color:blue;
+                font:sans-serif;
+                
+            }
+            
+            table {
+                
+                display: inline-block;
+                margin-right: 3px;
+                padding-left:3px;
+                padding-right:3px;
+                padding-bottom: 3px;
+                
+                
+            }
+            
