@@ -8,7 +8,7 @@
         <div>
             <a href="/homework">Homework</a>
             </br>
-            <a href ="/homework/homework1"></a> Homework1</a>
+            <a href ="/homework/homework1"> Homework1</a>
                 
         <div>
             <a href="/lab">Labs</a>
