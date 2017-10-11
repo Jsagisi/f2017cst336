@@ -7,7 +7,8 @@
     <body>
         <div>
             <a href="/homework">Homework</a>
-        </div>
+            <a href ="/homework/homework3">Homework3</a>
+                
         <div>
             <a href="/lab">Labs</a>
         </div>
