@@ -8,7 +8,7 @@
         <div>
             
             </br>
-            <a href ="/homework1/home.html"> Homework1</a>
+            <a href ="/homework1/index.php"> Homework1</a>
                 
         <div>
             
