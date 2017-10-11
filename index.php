@@ -6,10 +6,10 @@
     </head>
     <body>
         <div>
-            <a href="https://workspace-jsagisi.c9users.io/homework/">Homework</a>
+            <a href="/homework">Homework</a>
         </div>
         <div>
-            <a href="https://workspace-jsagisi.c9users.io/lab/">Labs</a>
+            <a href="/lab">Labs</a>
         </div>
     </body>
 </html>
