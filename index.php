@@ -5,13 +5,11 @@
         <title> </title>
     </head>
     <body>
-        <div>
-            <a href="/homework">Homework</a>
+        In Labs Folder
+        
             </br>
-          
-                
         <div>
-            <a href="/lab">Labs</a>
+            <a href="/lab4">Lab 4</a>
         </div>
     </body>
 </html>

@@ -9,14 +9,15 @@ $password = "";
 $dbConn = new PDO("mysql:host=$dbHost;port=$dbPort;dbname=$dbname", $username, $password);
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT * FROM employee WHERE employee_id = 123";
+$sql = "SELECT * FROM employee";
 
 
 $stmt = $dbConn -> prepare ($sql);
 $stmt -> execute ();
 
 while ($row = $stmt -> fetch()){
-    echo $row['employee_name'];    
+    echo $row['employee_name'];
+    echo "</br>";
 }
 
 ?>
