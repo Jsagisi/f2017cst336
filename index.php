@@ -24,7 +24,7 @@
             </br>
             </br>
             Labs
-            <a href="lab/lab1/home.html">Lab 1</a>
+            <a href="lab/lab1.0/home.html">Lab 1</a>
             </br>
             <a href="lab/lab2/index.php">Lab 2</a>
             </br>
