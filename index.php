@@ -9,14 +9,14 @@
         
             </br>
         <div>
-            <a href="/lab">Lab</a>
+            
         </div>
             Homeworks
             </br>
             
             <a href="homework/homework1/home.html">Homework 1</a>
             </br>
-            <a href="homework/homework2/baby_name.php">Homework 1</a>
+            <a href="homework/homework2/baby_name.php">Homework 2</a>
             </br>
             <a href="homework/homework3/quiz.php">Homework 3</a>
             </br>
