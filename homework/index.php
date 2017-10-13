@@ -7,8 +7,9 @@
     <body>
         <div>
             In Homework Folder
-            <a href="/homework3">Homework 3</a>
             </br>
+            <a href="homework/homework3">Homework 3</a>
+
           
                 
         <div>
