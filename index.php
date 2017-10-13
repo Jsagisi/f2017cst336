@@ -9,9 +9,9 @@
         
             </br>
         <div>
-            <a href="lab">Lab</a>
+            <a href="/lab">Lab</a>
         </div>
-            <a href="homework">Homework</a>
+            <a href="homework/homework1/home.html">Homework</a>
         
     </body>
 </html>
