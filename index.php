@@ -14,7 +14,7 @@
             Homeworks
             </br>
             
-            <a href="homework/homework1/home.html">Homework 1</a>
+            <a href="homework/homework1.0/home.html">Homework 1</a>
             </br>
             <a href="homework/homework2/baby_name.php">Homework 2</a>
             </br>
