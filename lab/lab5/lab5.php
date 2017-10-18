@@ -3,7 +3,7 @@
 
     $host = "localhost";
     $dbname = "tech_checkout";
-    $username = "root";
+    $username = "jsagisi";
     $password = "";
     foreach (glob("../../vendor/*.php") as $filename)
     {
