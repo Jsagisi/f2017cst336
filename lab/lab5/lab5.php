@@ -1,8 +1,33 @@
 <?php
 
-include '../../functions/dbConnection.php';
 
-$dbConn = getDBConnection("tech_checkout");
+    $host = "localhost";
+    //$dbname = "tech_checkout";
+    $username = "root";
+    $password = "";
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
+    try {
+        //Creating database connection
+        $dbConn = new PDO("mysql:host=$host;dbname=tech_checkout", $username, $password);
+        // Setting Errorhandling to Exception
+        $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    }
+    catch (PDOException $e) {
+        
+        echo "There was some problem connecting to the database! Error: $e";
+        exit();
+        
+    }
+    
+    $servername = getenv('DATABASE_HOST');
+    $username = getenv('USER_NAME');
+    $password = getenv('DATABASE_PASSWORD');
+    $database = getenv('DATABASE_NAME');
+    $dbport = getenv('DATABASE_PORT');
+    
+    $dbConn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function getDevices() {
     global $dbConn;
