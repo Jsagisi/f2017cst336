@@ -29,10 +29,11 @@
             </br>
             <a href="lab/lab2/index.php">Lab 2</a>
             </br>
-            <a href="lab/lab3/silverjack.php">Lab 3</a>
+            <a href="lab/lab3/cst336-lab3/silverjack.php">Lab 3</a>
             </br>
             <a href="lab/lab4/lab4.php">Lab 4</a>
             </br>
+            <a href="lab/lab5/lab5.php">Lab 5</a>
             
     </body>
 </html>

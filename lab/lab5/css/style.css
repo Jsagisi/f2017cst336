@@ -1,0 +1,39 @@
+            h1{
+                color:black !important;
+                text-align: center;
+                font-size:60px;
+                font-family:Aerial;
+            }
+            
+           
+            h3{
+                text-align: center;
+            }
+            
+            footer{
+                font-family: "Times New Roman", Georgia, Serif;
+                font-size:.8em;
+                width:600px;
+                margin:0 auto;
+                padding-top:10px;
+    }
+            input{
+                margin: auto;
+            }
+            #wrapper {
+                
+                width: 1200px;
+                margin: 0 auto; 
+                
+            }
+            #devices {
+                text-align:center;
+            }
+            body {
+                height: 100%;
+                text-align:center;
+            
+            form{
+                display:block;
+                text-align:center;
+            }

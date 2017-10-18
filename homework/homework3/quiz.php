@@ -7,7 +7,7 @@ function results(){
         echo "</br>";
      
     }
-    if($_GET['boolean'] == true){
+    if($_GET['boolean'] == 'True'){
         echo"Question 2 is Correct!";
         $sum+=1;
         echo "</br>";
@@ -19,7 +19,7 @@ function results(){
         echo "</br>";
         
     }
-    if($_GET['boolean2'] == false){
+    if($_GET['boolean2'] == 'False'){
         echo"Question 4 is Correct!";
         $sum+=1;
         echo "</br>";

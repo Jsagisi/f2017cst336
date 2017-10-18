@@ -3,7 +3,7 @@
 include 'ledLetters.php';
 
  function led($word, $color) {
-     global $colorPerCell;
+     global $colorPerCell, $colorPerWord;
      $result = array();
      $seperate_word = strtok($word,' ');
      while ( $seperate_word !== false){
@@ -16,23 +16,36 @@ include 'ledLetters.php';
           $color = "rainbow";
           
       }
+      
+      
       for ($j = 0; $j < count($result); $j++){
-          $final_word = $result[$j];
+             $final_word = $result[$j];
+          
+          if ($colorPerWord == true){
+              
+             $color = $colorPerWord[$j];
+          
+            }
+            
           for ($i = 0; $i < strlen($final_word); $i++ ) {
+              {
+            
               drawLetter($final_word[$i],$color);
+              
+              }
               
           }
           echo '<br>';
       }
       
- }
+}
 
 $message = $_GET['message'];
 $color = $_GET['color'];
 $colorPerCell = $_GET['colorPerCell'];
 $colorPerWord = $_GET['colorPerWord'];
 
-print_r($colorPerWord);
+
 
 
 function displayOrHideForm() {
@@ -85,7 +98,6 @@ function isFormValid() {
 <html>
     <head>
         <title> Lab 4: Custom LED Board</title>
-        <link rel="stylesheet" href="https://cst336-jsagisi.c9users.io/Lab/Lab4/css/lab4styles.css"/>
         <style>
             @import url("css/style.css");
             
@@ -104,7 +116,7 @@ function isFormValid() {
         </style>
     </head>
     <body>
-    <div> 
+    <div id="wrapper"> 
     <h1>Custom LED Board</h1>
 
         <form method="GET">
@@ -144,7 +156,7 @@ function isFormValid() {
           </form>
           
           <br />
-          </div>
+          
           <?php
           
            if (isFormValid()) {
@@ -154,7 +166,14 @@ function isFormValid() {
            }
           ?>
           
-        
+          <footer>
+
+            2017 &copy; Jason Sagisi.
+
+            <br/>
+            <img src ="img/csumb-logo.png">
+            </footer>
+        </div>
     </body>
    
 </html>

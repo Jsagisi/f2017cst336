@@ -11,10 +11,13 @@
             }
             h1{
                 color:blue;
-                font:sans-serif;
+                font:arial;
+                text-align: auto;
                 
             }
-            
+            body {
+              
+            }
             table {
                 
                 display: inline-block;
@@ -25,4 +28,4 @@
                 
                 
             }
-            
+          
