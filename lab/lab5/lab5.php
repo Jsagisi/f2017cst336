@@ -1,28 +1,14 @@
 <?php
 
 
-    $host = "localhost";
-    $dbname = "tech_checkout";
-    $username = "jsagisi";
-    $password = "";
+  
     foreach (glob("../../vendor/*.php") as $filename)
     {
         include $filename;
     }
     $dotenv = new Dotenv\Dotenv(__DIR__);
     $dotenv->load();
-    try {
-        //Creating database connection
-        $dbConn = new PDO("mysql:host=$host;dbname=tech_checkout", $username, $password);
-        // Setting Errorhandling to Exception
-        $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-    }
-    catch (PDOException $e) {
-        
-        echo "There was some problem connecting to the database! Error: $e";
-        exit();
-        
-    }
+  
     
     $servername = getenv('DATABASE_HOST');
     $username = getenv('USER_NAME');
