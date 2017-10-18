@@ -5,6 +5,10 @@
     $dbname = "tech_checkout";
     $username = "root";
     $password = "";
+    foreach (glob("../../vendor/*.php") as $filename)
+    {
+        include $filename;
+    }
     $dotenv = new Dotenv\Dotenv(__DIR__);
     $dotenv->load();
     try {
