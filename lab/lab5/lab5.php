@@ -2,11 +2,11 @@
 
 
     $host = "localhost";
-    //$dbname = "tech_checkout";
+    $dbname = "tech_checkout";
     $username = "root";
     $password = "";
-    // $dotenv = new Dotenv\Dotenv(__DIR__);
-    // $dotenv->load();
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
     try {
         //Creating database connection
         $dbConn = new PDO("mysql:host=$host;dbname=tech_checkout", $username, $password);
@@ -20,14 +20,14 @@
         
     }
     
-    // $servername = getenv('DATABASE_HOST');
-    // $username = getenv('USER_NAME');
-    // $password = getenv('DATABASE_PASSWORD');
-    // $database = getenv('DATABASE_NAME');
-    // $dbport = getenv('DATABASE_PORT');
+    $servername = getenv('DATABASE_HOST');
+    $username = getenv('USER_NAME');
+    $password = getenv('DATABASE_PASSWORD');
+    $database = getenv('DATABASE_NAME');
+    $dbport = getenv('DATABASE_PORT');
     
-    // $dbConn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-    // $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbConn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function getDevices() {
     global $dbConn;
