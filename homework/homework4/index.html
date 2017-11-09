@@ -1,74 +1,16 @@
-<?php
-$sum = 0;
-function results(){
-    if($_GET['radioAnswer']== '2x'){
-        echo "Question 1 is Correct!";
-        $sum+=1;
-        echo "</br>";
-     
-    }
-    if($_GET['boolean'] == 'True'){
-        echo"Question 2 is Correct!";
-        $sum+=1;
-        echo "</br>";
-      
-    }
-    if($_GET['checkboxMath']== '1' ){
-        echo"Question 3 is Correct!";
-        $sum+=1;
-        echo "</br>";
-        
-    }
-    if($_GET['boolean2'] == 'False'){
-        echo"Question 4 is Correct!";
-        $sum+=1;
-        echo "</br>";
-      
-    }
-    echo "</br>";
-    echo "</br>";
-    echo "Score = $sum /4";
-    $percent = ($sum/4) * 100;
-    echo "</br>";
-    printf("%.2f", $percent);
-    echo "%";
-    
-    echo "</br></br>";
-    
-}
-
-function isFormValid(){
-if (isset($_GET['submitForm'])){
-    
-        if (empty($_GET['name'])){
-            echo "Please enter a name!";
-            
-        }
-        if (empty($_GET['radioAnswer'])){
-            echo "Please choose a answer for question 2!";
-            
-        }
-        if (empty($_GET['checkboxMath'])){
-            echo "Please select an answer for question 3!";
-            
-        }
-        else{
-        return true;
-        }
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Random Quiz</title>
+        <title> </title>
     </head>
-    <style>
-    @import url("css/style.css");
-    </style>
     <body>
-        <h1>Quiz</h1>
+
+        <script type = "text/javascript">
+            
+            
+            
+        </script>
+         <h1>Quiz</h1>
         <h2>Random Questions </h2>
         
         <form method="GET">
@@ -114,11 +56,11 @@ if (isset($_GET['submitForm'])){
              
             </form>
             
-            <?php
-            if (isFormValid()){
-                results();
-            }
-            ?>
+            <script language = "text/javascript">
+                if(document.getElementById("checkboxMath")=="1"){
+                    
+                }
+            </script>
             
              <footer>
 
@@ -127,6 +69,5 @@ if (isset($_GET['submitForm'])){
             <br/>
             <img src ="img/csumb-logo.png">
             </footer>
-            
     </body>
 </html>

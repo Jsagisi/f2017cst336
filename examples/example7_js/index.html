@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <style>
+            .hide {
+                display:none;
+                
+        
+            }
+            .show {
+                display:block;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <h3 onclick="openSurprise()"> Click Here To Open the Surprise</h3>
+        <div id="container" class="hide">
+            <img id="surprise" src="img/now_you_dont.png"/>
+        </div>
+        
+        <script type="text/javascript">
+        function openSurprise(){
+            console.log("opening my surprise!");
+            var image = document.getElementById("surprise");
+            image.setAttribute("src","img/now_you_see_me.png");
+            document.getElementById("container").setAttribute("class", "show");
+            console.log("surprise opened",image);
+            
+            
+            
+        }
+         </script>
+    </body>
+</html>
