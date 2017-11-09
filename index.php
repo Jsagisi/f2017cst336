@@ -35,5 +35,8 @@
             </br>
             <a href="lab/lab5/lab5.php">Lab 5</a>
             
+            </br>
+            <a href="lab/lab5/admin.php">Lab 6</a>
+            
     </body>
 </html>
