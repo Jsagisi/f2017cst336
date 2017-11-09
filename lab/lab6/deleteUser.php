@@ -5,7 +5,7 @@ if (!isset($_SESSION["username"])) {  //Check whether the admin has logged in
     header("Location: login.html"); 
 }
 
-include '../../functions/dbConnection.php';
+include 'inc/functions.php';
 
 $dbConn = getDBConnection("tech_checkout");
 
