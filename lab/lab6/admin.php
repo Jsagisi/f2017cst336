@@ -5,26 +5,9 @@ if (!isset($_SESSION["username"])) {  //Check whether the admin has logged in
     header("Location: login.html"); 
 }
 
-// include '../../functions/dbConnection.php';
+include 'inc/functions.php';
 
-// $dbConn = getDBConnection("tech_checkout");
-
-    foreach (glob("../../vendor/*.php") as $filename)
-    {
-        include $filename;
-    }
-    $dotenv = new Dotenv\Dotenv(__DIR__);
-    $dotenv->load();
-  
-    
-    $servername = getenv('DATABASE_HOST');
-    $username = getenv('USER_NAME');
-    $password = getenv('DATABASE_PASSWORD');
-    $database = getenv('DATABASE_NAME');
-    $dbport = getenv('DATABASE_PORT');
-    
-    $dbConn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-    $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbConn = getDBConnection("tech_checkout");
 
 
 function getAllUsers() {

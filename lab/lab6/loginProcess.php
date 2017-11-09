@@ -1,7 +1,7 @@
 <?php
 session_start();  //start or resume an existing session
 
-include '../../functions/dbConnection.php';
+include 'inc/functions.php';
 
 $conn = getDBConnection("tech_checkout");
 

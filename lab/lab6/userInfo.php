@@ -14,7 +14,7 @@ if (!isset($_SESSION["username"])) {
     header("Location: login.html");
 }
 
-include '../../functions/dbConnection.php';
+
 include 'inc/functions.php';
 $conn = getDBConnection("tech_checkout");
 

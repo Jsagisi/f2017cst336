@@ -5,9 +5,9 @@ session_start();
 if(!isset($_SESSION['username'])){
     header("Location: login.html");
 }
-include '../../functions/dbConnection.php';
-    $conn = getDBConnection("tech_checkout");
     include 'inc/functions.php';
+    $conn = getDBConnection("tech_checkout");
+    
     
 if(isset($_GET['Submit'])){
     $sql = "UPDATE user

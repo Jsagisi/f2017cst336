@@ -5,12 +5,10 @@
     header("Location: login.html"); 
    }
    
-    include '../../functions/dbConnection.php';
-    $conn = getDBConnection("tech_checkout");
-    
-    
-
     include 'inc/functions.php';
+    $conn = getDBConnection("tech_checkout");
+
+   
     
     function addUser(){
        global $conn;
