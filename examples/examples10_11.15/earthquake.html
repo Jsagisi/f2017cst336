@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <h1>Earthquake Information</h1>
+            <table id="results">
+                <thead>
+                    <th>Date</th>
+                    <th>Magnitude</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+        <script>
+        $(function() {
+                $(".loading").hide()
+
+                // Show spinner
+                $(".loading").show()
+            $.ajax({
+                url: "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2017-11-12&endtime=2017-11-30&latitude=36.6&longitude=-121.9&maxradius=10&minmag=4",
+                
+                type:"GET",
+                
+                dataType:"json",
+                
+            })
+            
+            .done(function(data) {
+                
+            
+            for(var i in data.features){
+                var features = data.features[i]
+                $('#results > tbody').append($('<tr>')
+                    .append($('<td>').html(features.properties.mag)));
+            }
+            
+            }
+            )
+        })
+        </script>
+
+    </body>
+</html>

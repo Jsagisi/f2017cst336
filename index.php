@@ -20,6 +20,7 @@
             </br>
             <a href="homework/homework3/quiz.php">Homework 3</a>
             </br>
+            <a href="homework/homework4/index.html">Homework 4</a>
             </br>
             </br>
             </br>
@@ -37,6 +38,8 @@
             
             </br>
             <a href="lab/lab6/admin.php">Lab 6</a>
+            </br>
+            
             
     </body>
 </html>

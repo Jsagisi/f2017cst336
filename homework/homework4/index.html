@@ -2,35 +2,118 @@
 <html>
     <head>
         <title> </title>
+         <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <style>
+              .container{
+                  text-align:center;
+              }
+          </style>
     </head>
-    <body>
-
-        <script type = "text/javascript">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+               <script type = "text/javascript">
+            function formvalidation(){
             
+            console.log("Entered Function");
+            var user_name = document.getElementById("name").value;
             
+            var checkboxMath = document.getElementById("checkboxMath").checked;
             
+            if(user_name == ''){
+                alert("Please enter a name");
+                console.log("No name provided");
+                return false;
+            }
+            if(!$("input:radio[name='radioAnswer']").is(":checked")){
+                alert("Please select a answer for question 2")
+                console.log("Radio button not selected");
+                return false;
+            }
+         
+            if (!$("input:checkbox[name='checkboxMath']").is(":checked")){
+                document.getElementById("radioAnswer").innerHtml = "Please select an answer for question 3";
+                alert("Please enter a answer for question 3!");
+                console.log("Question 3 was empty");
+                return false;
+            }
+           
+            // if(checkboxMath == false){
+            //     document.getElementById("checkboxMath").innerHTML = "Please select an answer for question 3!";
+            //     alert("Please enter a answer for question 3!");
+            //     console.log("Question 3 was invalid");
+            //     return false;
+            // }
+            
+            else{
+                results();
+                return true;
+                
+            }
+            
+            }
+            
+            function results(){
+                var radioAnswer = $('input:radio[name=radioAnswer]:checked').val();
+                var checkboxMath = $('input:checkbox[name=checkboxMath]:checked').val();
+                var checkboxLength = $('input:checkbox[name=checkboxMath]:checked').length;//Only one checkbox is the right answer
+                var boolean = document.getElementById("boolean").value;
+                var boolean2 = document.getElementById("boolean2").value;
+                
+                var total_score = 0;
+                
+               
+                if(boolean == 'True'){
+                    console.log("Question 1 is Correct!");
+                    total_score +=1;
+                }
+                 if(radioAnswer == '2x'){
+                    console.log("Question 2 is Correct!");
+                    total_score +=1;
+                }
+                
+                if(checkboxMath == '1' && checkboxLength < 2){
+                    console.log("Question 3 is Correct!");
+                    total_score +=1;
+                    
+                }
+                if(boolean2 =='False'){
+                    console.log("Question 4 is Correct!");
+                    total_score +=1;
+                }
+                console.log(total_score);
+                var percentage = (total_score / 4) * 100;
+                document.getElementById("score").innerHTML = "You scored "+total_score + " out of 4."+"</br>" + "Percent: " + percentage + "%";
+                
+            }
         </script>
+    <body>
+       <div class="jumbotron text-center">
          <h1>Quiz</h1>
         <h2>Random Questions </h2>
+        </div>
         
-        <form method="GET">
-            Enter Name: <input type="text" name="name" size="25" maxlength="25" placeholder="Enter name" value ="">
+        <form method="GET" onsubmit = "formvalidation()">
+            <div class="container">
+            Enter Name: <input type="text" id="name" name="name" size="25" maxlength="25" placeholder="Enter name" value ="">
             <br /> <br />
             1. True or False:  200/10 = 20?
-            <select name="boolean">
+            <select name="boolean" id="boolean">
                 <option>True</option>
                 <option>False</option>
             </select>
             <br /> <br />
             2. Derivative of x^2?
             <br />  
-            <input type="radio" name="radioAnswer" value="2x"><label>2x</label>
+            <input type="radio" id="radioAnswer"name="radioAnswer" value="2x"><label>2x</label>
             <br />
-            <input type="radio" name="radioAnswer" value="x^3/3"><label>x^3/3</label>
+            <input type="radio" id="radioAnswer" name="radioAnswer" value="x^3/3"><label>x^3/3</label>
             <br />
-            <input type="radio" name="radioAnswer" value="x"><label>x</label>
+            <input type="radio" id="radioAnswer" name="radioAnswer" value="x"><label>x</label>
             <br />
-            <input type="radio" name="radioAnswer" value="1"><label>1</label>
+            <input type="radio" id="radioAnswer" name="radioAnswer" value="1"><label>1</label>
             <br /><br />
             3. Which of these answers are programming languages
             <br />
@@ -46,21 +129,22 @@
              <br /><br />
              
              4.True or False:  PHP is frontend and HTML is dealt on the backend.
-             <select name="boolean2">
+             <select name="boolean2" id="boolean2">
                 <option>True</option>
                 <option>False</option>
             </select>
              
-             <input type="submit" value="Submit" name="submitForm"/> 
+             <!--<input type="submit" value="Submit" name="submitForm"/> -->
              
+             <button type="button" onclick="formvalidation()">Submit</button>
              
+             </br>
+             <p id="score"></p>
+             
+    
             </form>
             
-            <script language = "text/javascript">
-                if(document.getElementById("checkboxMath")=="1"){
-                    
-                }
-            </script>
+            
             
              <footer>
 
@@ -69,5 +153,6 @@
             <br/>
             <img src ="img/csumb-logo.png">
             </footer>
+            </div>
     </body>
 </html>
