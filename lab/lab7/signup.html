@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 7: Sign Up </title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        
+        function getCity(){
+            
+            //alert(document.getElementById("zip").value);
+            //alert( $("#zip").val() );
+            //document.getElementById("city").innerHTML = "Seaside!";
+           // $("#city").html("Seaside");
+            
+            
+            $.ajax({
+                type: "get",
+                url: "http://hosting.otterlabs.org/laramiguel/ajax/zip.php",
+                dataType: "json",
+                data: { "zip_code": $("#zip").val() },
+                success: function(data,status) {
+                     //alert(data.city);
+                     $("#city").html(data.city);
+                     $("#longitude").html(data.longitude);
+                     $("#latitude").html(data.latitude);
+                  },
+                  complete: function(data,status) { //optional, used for debugging purposes
+                      //alert(status);
+                  }
+           });//AJAX
+ 
+        }//endFunction   
+        
+        
+        function getCounty(){
+           $("#county").html(""); //reset values
+           // alert($("#state").val());
+            $.ajax({
+                type: "get",
+                url: "http://hosting.otterlabs.org/laramiguel/ajax/countyList.php",
+                dataType: "json",
+                data: { "state":$("#state").val()  },
+                success: function(data,status) {
+                   // alert(data.counties[0].county);
+                    var i = 0;
+                      for(i;i<data.counties.length;i++){
+                          $("#county").append("<option>"+data.counties[i].county +"</option>");
+                      }
+                  },
+                  complete: function(data,status) { //optional, used for debugging purposes
+                      //alert(status);
+                  }
+           });//AJAX           
+           
+            
+        }//endFunction
+        function checkUsername(){
+            //alert($("#username").val());
+            
+            $.ajax({
+                type: "get",
+                url: "https://workspace-jsagisi.c9users.io/lab/lab7/checkUsername.php",
+                dataType: "json",
+                data: { "username":$("#username").val()  },
+                success: function(data,status) {
+                    //if (data == false)
+                    if (!data) {
+                        console.log("username available");
+                        alert("username available!");
+                    } else {
+                        console.log("username taken");
+                        alert("username taken!");
+                    }
+                  },
+                  complete: function(data,status) { //optional, used for debugging purposes
+                      //alert(status);
+                  }
+           });//AJAX   
+        }
+        
+        function displayError(elementId, errorMessage){
+           $(elementId+"Error").append(errorMessage);
+           $(elementId).css("backgroundColor","red");
+           $(elementId).focus(); 
+        }
+        
+        function checkPassword(){
+            //alert("testing");
+            var validPassword =true;
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+             $("#passwordError").html("");
+             $("#password").css("backgroundColor","");
+             $("#repassword").css("backgroundColor","");
+             
+            if (password.length < 6) {
+                //alert("Password is too short!");
+                displayError("#password", "Password must be longer than 5 characters!<br>");
+                validPassword = false;
+                //$("#passwordError").html("Password must be longer than 5 characters!");
+                //$("#password").css("backgroundColor","red");
+                //$("#password").focus();
+            }
+            
+            if ( !/[0-9]/.test(password) ) {
+                //$("#passwordError").html("Password must include at least one digit!");
+                displayError("#password", "Password must include at least one digit!<br>");
+                validPassword = false;
+            }
+            
+            if ( !/[A-Z]/.test(password) ) {
+                // $("#passwordError").html("Password must include at least one uppercase!");
+                displayError("#password", "Password must include at least one uppercase!<br>");
+                validPassword = false;
+            }
+            
+            
+            return validPassword;
+        }
+        function recheckPassword(){
+            var passwordrepeated = true;
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+            $("#repasswordError").html("");
+            if(password != repassword){
+                displayError("#repassword","Password entered was not the same");
+                validPassword = false;
+            }
+            else{
+                $("#repassword").css("backgroundColor","");
+                $("#repasswordError").html("");
+            }
+            return passwordrepeated;
+        }
+        
+        $(document).ready(function(){
+            
+            $("#password").change( function(){
+                
+                checkPassword();
+                
+            } );
+             $("#repassword").change( function(){
+                
+                recheckPassword();
+                
+            } );
+            
+             $("#email").change( function(){
+                
+                checkEmail();
+            
+            } );
+            $("#phoneNumber").change( function(){
+                checkphoneNumber();
+            })
+            $("#username").change( function(){
+                checkUsername();
+            })
+            
+        });//documentReady
+
+
+        function checkEmail(){
+            
+            var email = $("#email").val();
+            $("#emailError").html("");
+            if (!/[a-z]+@[a-z]|[0-9]+\.[a-z]{2,4}$/i.test(email)) {
+                displayError("#email", "Wrong email format!<br>");
+            }
+            else{
+                $("#email").css("backgroundColor","");
+            }
+            
+        
+        }
+        function checkphoneNumber(){
+          
+            var phoneNumber =$("#phoneNumber").val();
+      
+
+           $("#phoneNumberError").html("");
+            
+            if(!/[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/i.test(phoneNumber)){
+                displayError("#phoneNumber", "Wrong phone format!<br>");
+            }
+            else{
+                $("#phoneNumber").css("backgroundColor","");
+            }
+            
+          
+            
+        }
+        
+        
+        function validateForm(){
+            
+            var isValid = true;
+                checkEmail();
+                checkphoneNumber();
+                isValid = checkPassword();
+                isValid = recheckPassword();
+                
+            
+            return isValid;
+            
+        }
+        
+        
+    </script>
+    
+    <style>
+        
+        .error{
+            color: red;
+        }
+        
+    </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+            
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <form action="success.php" onsubmit="return validateForm()">
+        <fieldset>
+           <legend>Sign Up<span class="label label-default"></span></legend>
+            First Name: <input type="text" /><br /> 
+            Last Name:  <input type="text" /><br /> 
+            Email:      <input type="text" id="email" /><span class="error" id="emailError"></span><br /> 
+            Phone Number: xxx-xxx-xxxx <input type="text" id="phoneNumber" /><span class="error" id="phoneNumberError"></span><br /><br />
+            Zip Code: <input id="zip" name="zip" type="text" onchange="getCity()" /><br /><br />
+            City: <span id="city"></span>
+            <br/>
+            Latitude: <span id="latitude"></span>
+            <br />
+            Longitude:<span id="longitude"></span>
+            <br />
+           
+            State: <select id = "state" onchange ="getCounty()">
+                <option>Select One</option>
+                <option value="AZ">Arizona</option>
+                <option value="CA">California</option>
+                <option value="TX">Texas</option>
+            </select><br />
+            Select a County: <select id="county"></select><br />
+            
+            Desired Username: <input id="username" type="text" onchange = "checkUsername()"/><br />
+            Password: <input type="password" id="password">
+            <span class="error" id="passwordError"></span>
+            <br />
+            Type Password Again: <input type="password" id="repassword"><br />
+            <span class="error" id="repasswordError"></span>
+            <input type="submit" value="Sign up!" />
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
