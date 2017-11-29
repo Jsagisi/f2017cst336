@@ -126,11 +126,11 @@
             $("#repasswordError").html("");
             if(password != repassword){
                 displayError("#repassword","Password entered was not the same");
-                validPassword = false;
+                passwordrepeated = false;
             }
             else{
                 $("#repassword").css("backgroundColor","");
-                $("#repasswordError").html("");
+                $("#repassword").html("");
             }
             return passwordrepeated;
         }
@@ -201,7 +201,7 @@
                 checkEmail();
                 checkphoneNumber();
                 isValid = checkPassword();
-                isValid = recheckPassword();
+               
                 
             
             return isValid;
