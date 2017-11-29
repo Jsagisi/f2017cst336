@@ -39,6 +39,8 @@
             </br>
             <a href="lab/lab6/admin.php">Lab 6</a>
             </br>
+            <a href="lab/lab7/signup.html">Lab 7</a>
+            </br>
             
             
     </body>
