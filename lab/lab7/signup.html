@@ -130,7 +130,7 @@
             }
             else{
                 $("#repassword").css("backgroundColor","");
-                $("#repassword").html("");
+                $("#repasswordError").html("");
             }
             return passwordrepeated;
         }
@@ -201,7 +201,7 @@
                 checkEmail();
                 checkphoneNumber();
                 isValid = checkPassword();
-               
+                isValid = recheckPassword();
                 
             
             return isValid;

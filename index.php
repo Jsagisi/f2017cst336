@@ -39,7 +39,7 @@
             </br>
             <a href="lab/lab6/admin.php">Lab 6</a>
             </br>
-            <a href="http://workspace-jsagisi.c9users.io/lab/lab7/signup.html">Lab 7</a>
+            <a href="http://workspace-jsagisi.c9users.io/lab/lab7/signup.html">Lab 7</a> Hosted on C9. Can't get the workaround to fix the API to work because of HTTPS.
             </br>
             
             
