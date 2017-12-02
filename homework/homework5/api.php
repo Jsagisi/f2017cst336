@@ -1,3 +1,27 @@
+<?php
+session_start();
+function userSearches(){
+
+$id = $_GET['product'];
+if(!isset($_SESSION['product'])){
+    $_SESSION['searches'] = array();
+}
+if(!empty($_GET['product'])){
+    
+    $_SESSION['searches'][$id] = array('quantity'=> 1);
+    // unset($_SESSION['searches'][$_GET['product']]);
+    
+    
+    $_SESSION['searches'][$id]['quantity']++;
+    echo $_SESSION['searches'][$id]['quantity'];
+    $result = array([$_GET['product']['quantity']] => $result);
+    $_SESSION['searches']['quantity'] = array_merge($result, $_SESSION['product']['quantity']);
+    print_r($result);
+}
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,15 +93,21 @@
         <h1> API Search</h1><span class="label label-default"></span>
         
         
-            
+            <form>
             Product: <input type="text" id="product">
             <input type="button" onclick="searchProducts()" value="Search Products">
             <br>
             <br>
-        
+        </form>
+        <br>
+       
 
         <div id="products">
             
         </div>
+        Search History: 
+            <?php 
+            userSearches();
+            ?>
     </body>
 </html>
