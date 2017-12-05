@@ -42,8 +42,8 @@
             </br>
             <a href="http://workspace-jsagisi.c9users.io/lab/lab7/signup.html">Lab 7</a> Hosted on C9 to get API to work. Can't get the workaround to fix the API to work because of HTTPS. Must use http for it to work.
             </br>
-             </br>
-            <a href="lab/lab8/lab8.php">Lab 8</a>
+         
+            <a href="http://workspace-jsagisi.c9users.io/lab/lab8/lab8.php#">Lab 8</a> Hosted on C9. Couldn't get database to work on Heroku.
             </br>
             
             

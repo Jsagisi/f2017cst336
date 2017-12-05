@@ -1,7 +1,7 @@
 <?php
     
     include'inc/header.html';
- 
+  
     function getDBConnection($dbname){
          foreach (glob("../../vendor/*.php") as $filename)
     {
