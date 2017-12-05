@@ -2,6 +2,7 @@
     
     include'inc/header.html';
  
+    function getDBConnection($dbname){
          foreach (glob("../../vendor/*.php") as $filename)
     {
         include $filename;
@@ -20,9 +21,10 @@
     
     $dbConn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
     $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+    return $dbConn;
+ }
      function getPetList() {
-            global $dbConn;
+            $dbConn = getDBConnection("c9");
           
             $sql = "SELECT *
                     FROM adoptees"; 
@@ -34,6 +36,7 @@
  
             return $record;
      }
+     
 ?>
   
 <script>
@@ -113,7 +116,3 @@
 
 
 
-        
-<?php
-    include 'inc/footer.html';
-?>
